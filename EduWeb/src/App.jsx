@@ -1,34 +1,37 @@
-import { useState } from "react";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React, { useState } from "react";
+import About from "./components/About/About";
+import Campus from "./components/Campus/Campus";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+import Hero from "./components/Hero/Hero";
+import Navbar from "./components/Navbar/Navbar";
+import Programs from "./components/Programs/Programs";
+import Testimonials from "./components/Testimonials/Testimonials";
+import Title from "./components/Title/Title";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 
-function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+  const [playState, setPlayState] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <Navbar />
+      <Hero />
+      <div className="container">
+        <Title subTitle="Our PROGRAM" title="What We Offer" />
+        <Programs />
+        <About setPlayState={setPlayState} />
+        <Title subTitle="Gallery" title="Campus Photos" />
+        <Campus />
+        <Title subTitle="TESTIMONIALS" title="What Student Says" />
+        <Testimonials />
+        <Title subTitle="Contact Us" title="Get in Touch" />
+        <Contact />
+        <Footer />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <VideoPlayer playState={playState} setPlayState={setPlayState} />
+    </div>
   );
-}
+};
 
 export default App;

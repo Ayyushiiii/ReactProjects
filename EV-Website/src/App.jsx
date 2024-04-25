@@ -21,6 +21,7 @@ function App() {
           setPlayStatus={setPlayStatus}
           heroData={heroData[heroCount]}
           heroCount={heroCount}
+          playStatus={playStatus}
           setHeroCount={setHeroCount}
         ></Hero>
       </div>

@@ -8,6 +8,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // set username and password
     setUser({ username, password });
   };
 

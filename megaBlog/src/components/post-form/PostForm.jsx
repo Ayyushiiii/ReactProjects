@@ -20,7 +20,7 @@ function PostForm() {
          const userData = useSelector(state => state.user.userData)
          const submit = async(data) =>{
             if(post){
-             const file = data.image[0]? appwriteService.uploadFile(data.image[0]) : null
+             const file = data.image[0]? await appwriteService.uploadFile(data.image[0]) : null
 
              if(file){
                 appwriteService.deleteFile(post.featuredImage)
@@ -58,14 +58,14 @@ function PostForm() {
             .trim()
             .toLowerCase()
             .replace(/[^a-zA-Z\d\s]+/g, "-")
-            .reaplace(/\s/g, "-")
+            .replace(/\s/g, "-")
 
             return ''
          }, [])
 
          React.useEffect(()=>{
             const subscription = watch((value, {name}) =>{
-                if(name == 'title'){
+                if(name == "title"){
                      setValue('slug', slugTransform(value.title, 
                         {shouldValidate :true}))
                   }

@@ -14,7 +14,7 @@ function Signup() {
     const {register, handleSubmit} = useForm();
     
 
-    const create = async() =>{
+    const create = async(data) =>{
         setError("");
         try {
            const userData = await authService.createAccount(data)
@@ -38,9 +38,9 @@ function Signup() {
                   <Logo width="100%" />
               </span>
            </div>
-             <h2 className='text-center text-2xl font-bold leading-tight'>sign up to create account</h2>
+             <h2 className='text-center text-2xl font-bold leading-tight'>Sign up to create account</h2>
              <p  className="mt-2 text-center text-base text-black/60">
-                Already have an account?&nsbp;
+                Already have an account?&nbsp;
                  <Link
                         to="/login"
                         className="font-medium text-primary transition-all duration-200 hover:underline"

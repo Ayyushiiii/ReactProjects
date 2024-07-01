@@ -3,11 +3,14 @@ import logo from '../../assets/images/logo.png'
 import Cart from '../Cart/Cart';
 import { useSelector } from 'react-redux';
 import { Tooltip } from '@material-tailwind/react';
+import { logout } from '../../features/slices/authSlice';
+import { useDispatch } from 'react-redux';
 
 const Navbar = () => {
   const totalAmount = useSelector((state)=>state.cart.totalAmount)
   const [open, setOpen] = React.useState(false);
   const handleOpen = () =>{setOpen(true)} ;
+  const dispatch = useDispatch()
   return (
     <>
     <div className='bg-black p-2 w-full'>
@@ -18,7 +21,7 @@ const Navbar = () => {
             <img className="h-28 w-full"src={logo} alt="" />
         </div>
         <div className="flex flex-row items-center ">
-            <button className='font=inter text-base font-medium tracking-normal loading-none text-center mr-4'>Logout</button>
+            <button className='font=inter text-base font-medium tracking-normal loading-none text-center mr-4'onClick={()=>dispatch(logout())}>Logout</button>
 
         <div className="flex flex-row items-center ">
           <svg xmlns="http://www.w3.org/2000/svg"

@@ -3,11 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "source": "src/main.jsx",
+   "homepage": "http://Ayyushiiii.github.io/JS-portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-gh": "vite build --public-url 'https://Ayyushiiii.github.io/JS-portfolio'",
+    "predeploy": "npm run build-gh",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.9",
@@ -26,6 +31,7 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
     "vite": "^5.2.0"

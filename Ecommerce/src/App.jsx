@@ -18,7 +18,8 @@ const {authUser} =user;
       <Routes>
         <Route 
         path='/' 
-        element={authUser? <Main></Main> : <Login></Login>}>
+        // element={authUser? <Main></Main> : <Login></Login>}>
+        element={ <Main></Main>}>
         </Route> 
        <Route
             path="/filteredProducts/:type"

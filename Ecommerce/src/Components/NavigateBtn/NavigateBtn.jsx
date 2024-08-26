@@ -23,11 +23,10 @@ const NavigateBtn = () => {
             {buttons.map((button, index)=>{
                 return(<div key={index} className='mr-4'>
                     <Link to={"/filteredProducts/" + button}>
-                    <Button  color="gray"
+                    <Button  color="yellow"
                     size='lg' 
-                    variant='outlined'
                     ripple= {true}
-                    className="text-black hover:bg-gray-400 duration-300 ease-in-out"
+                    className="text-white hover:bg-gray-400 "
                     
                     onClick={()=>dispatch(filterProducts(button))}>
                         {button}
